@@ -1,4 +1,7 @@
 package gr.aueb.cf.testing;
+
+import java.util.Scanner;
+
 /**
  * Function 1) Find all Leap years.
  * Finds all the leap years
@@ -10,9 +13,6 @@ package gr.aueb.cf.testing;
  * User inputs an integer for year
  * Prints if the year is/isn't a leap year
  */
-
-import java.util.Scanner;
-
 public class LeapYearTest {
 
     public static void main(String[] args) {
@@ -26,7 +26,7 @@ public class LeapYearTest {
         System.out.println("Welcome");
         do {
             printMenu();
-            choice = choice(in);
+            choice = choice(in);    // TODO: Don't use the same name for variable and method
             if (choice == 3) {                      //Shut down state.
                 System.out.println("Exiting...");
                 break;
@@ -35,13 +35,14 @@ public class LeapYearTest {
                 printLeapYears(years[0], years[1]); //Executes printLeapYears method.
             } else {
                 leapYearFinder(in);                 //Executes when user inputs 2 in choice. Executes leapYearFinder method.
-                }
+            }
         } while (choice != 3);                      //Repeats by printing starting menu. User must enter a choice between 1-3 again
     }
 
     /**
      * Calculates the number leap years found, between two integers
      * that user inputs
+     *
      * @param startYear
      * @param endYear
      */
@@ -55,14 +56,14 @@ public class LeapYearTest {
             isLeapYear = ((i % 400 == 0) || (i % 4 == 0) && (i % 100 != 0));
             if (isLeapYear) {
                 System.out.println(i);  //Prints the value of i (leap year) every time a leap year is found.
-                foundSome = true; // Boolean foundSome here is redundant. Name clarifies it's specific use.
-                counter++;        // Counter can also be used to see if 0 leap years were found. Name clarifies it's use.
+                foundSome = true;       // Boolean foundSome here is redundant. Name clarifies it's specific use.
+                counter++;              // Counter can also be used to see if 0 leap years were found. Name clarifies it's use.
             }
         }
         if (!foundSome) { // Tests if 0 leap years were found. e.g. startYear == 1 && endYear == 3. Alternative = (if (counter != 0))
             System.out.println("No Leap years were found");
         } else {
-        System.out.printf("\n%d Leap Years were found\n", counter); //Counts the number of total leap years found.
+            System.out.printf("\n%d Leap Years were found\n", counter); //Counts the number of total leap years found.
         }
     }
 
@@ -82,8 +83,9 @@ public class LeapYearTest {
      * User inputs an integer for choice on menu printed
      * if the choice is not valid
      * User must input a valid one between 1 and 3.
-     * @param in    User input integer.
-     * @return
+     *
+     * @param in User input integer.
+     * @return A choice between 1 and 3.
      */
     public static int choice(Scanner in) {
 
@@ -101,11 +103,12 @@ public class LeapYearTest {
      * Saves two integers input by the User
      * in an array.
      * Returns the array.
-     * @param in    The starting and the ending Year.
-     * @return      An array containing both values.
+     *
+     * @param in The starting and the ending Year.
+     * @return An array containing both values.
      */
-    public static int[] yearValues (Scanner in){
-        int[] years = {0,0};
+    public static int[] yearValues(Scanner in) {
+        int[] years = {0, 0};
         System.out.println("Insert starting year");
         years[0] = in.nextInt();
         System.out.println("Insert end year");
@@ -114,12 +117,12 @@ public class LeapYearTest {
     }
 
     /**
-     * User inputs an integer for Year.
-     * Calculates if the input integer
-     * is a Leap year or not.
-     * @param in    The year the user wants to calculate.
+     * Try to make it two different methods
+     * 1. public static boolean where user inputs the year and returns a true/false value
+     * 2. public static void where method 1. feeds true or false and 2. prints one of the two
+     * @param in
      */
-    public static void leapYearFinder (Scanner in) {
+    public static void leapYearFinder(Scanner in) {
         int year = 0;
         boolean isLeapYear = false;
         System.out.println("Please enter a Year");
