@@ -91,7 +91,7 @@ public class StarsApp {
         int choice;
         do {
             choice = in.nextInt();
-            if (choice < 1 || choice > 6) {
+            if (choice < 1 || choice > 6) { //Simple check for choice validity. Since menu only has 6 choices
                 System.out.println("Please enter a valid choice");
             }
         } while (choice < 1 || choice > 6);
