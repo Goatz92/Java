@@ -3,7 +3,7 @@ package gr.aueb.cf.ch4;
 import java.util.Scanner;
 
 /**
- * User inputs a n integer for stars
+ * User inputs an n integer for stars
  * and prints:
  * n horizontal stars
  * n vertical stars
@@ -11,17 +11,19 @@ import java.util.Scanner;
  * 1 to n stars (Ascending)
  * n to 1 stars (Descending)
  */
-public class StarsApp {
+
 /*
 TODO: Find a way to implement Scanner in all methods by initiating only once
     Scanner in = new Scanner(System.in);
-
  */
+
+public class StarsApp {
+
+    static Scanner in = new Scanner(System.in);
+
     public static void main(String[] args) {
 
-        Scanner in = new Scanner(System.in);
         int stars = 0;
-        int lines = 0;
         int choice;
         menuStatic();
         do {
@@ -113,7 +115,6 @@ TODO: Find a way to implement Scanner in all methods by initiating only once
      */
     public static int starsCount(int stars) {
 
-        Scanner in = new Scanner(System.in);
         do {
             System.out.println("\nPlease enter the number of stars\n");
             stars = in.nextInt();
@@ -135,7 +136,6 @@ TODO: Find a way to implement Scanner in all methods by initiating only once
      */
     public static int linesCount(int lines) {
 
-        Scanner in = new Scanner(System.in);
         do {
             System.out.println("\nPlease enter the number of Lines\n");
             lines = in.nextInt();
