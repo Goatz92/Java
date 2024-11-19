@@ -12,11 +12,6 @@ import java.util.Scanner;
  * n to 1 stars (Descending)
  */
 
-/*
-TODO: Find a way to implement Scanner in all methods by initiating only once
-    Scanner in = new Scanner(System.in);
- */
-
 public class StarsApp {
 
     static Scanner in = new Scanner(System.in);
