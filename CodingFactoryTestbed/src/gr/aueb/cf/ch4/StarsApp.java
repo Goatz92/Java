@@ -24,7 +24,7 @@ public class StarsApp {
         do {
             printMenu();
             choice = choice(in);
-            switch (choice) { //For each case see printMenu Method
+            switch (choice) { //For each case see printMenu Method. For Choice see choice method
                 case 1:
                     stars = starsCount(stars);
                     starsLine(stars);
@@ -42,10 +42,10 @@ public class StarsApp {
                     starsDescending();
                     break;
                 case 6:
-                    System.out.println("Goodbye!");
+                    System.out.println("Goodbye!"); //Exit State
                     break;
             }
-        } while (choice != 6);
+        } while (choice != 6); //Checks for Exit state
     }
 
     /**
@@ -113,7 +113,7 @@ public class StarsApp {
         do {
             System.out.println("\nPlease enter the number of stars\n");
             stars = in.nextInt();
-            isNumberOfStarsValid(stars);
+            isNumberOfStarsValid(stars); //Checks if number of stars is <= 0.
         } while (stars <= 0);
         return stars;
     }
@@ -134,7 +134,7 @@ public class StarsApp {
         do {
             System.out.println("\nPlease enter the number of Lines\n");
             lines = in.nextInt();
-            isNumberOfLinesValid(lines);
+            isNumberOfLinesValid(lines); //Checks if number of lines is <= 0.
         } while (lines <= 0);
         return lines;
     }
@@ -172,7 +172,7 @@ public class StarsApp {
      */
     public static void starsLine (int stars) {
 
-        for (int i = 1; i <= stars; i++) {
+        for (int i = 1; i <= stars; i++) { //Formula for printing * in a horizontal line.
             System.out.print("*");
         }
     }
@@ -185,7 +185,7 @@ public class StarsApp {
 
         int stars = 0;
         stars = starsCount(stars);
-        for (int i = 1; i <= stars; i++)
+        for (int i = 1; i <= stars; i++) //Formula for printing stars in a vertical line.
             System.out.println("*");
     }
 
@@ -201,7 +201,7 @@ public class StarsApp {
         int lines = 0;
         stars = starsCount(stars);
         lines = linesCount(lines);
-        for (int i = 1; i <= lines; i++) {
+        for (int i = 1; i <= lines; i++) { //Formula for determining how many lines the box shape will have
             starsLine(stars);{
             }
             System.out.println();
@@ -209,7 +209,9 @@ public class StarsApp {
     }
 
 /*
-             Example Method for printing Box (n*n (n = 10 in this example)
+------------------------------------------------------------
+Example Method for printing Box (n*n (n = 10 in this example)
+------------------------------------------------------------
         for (int i = 1; i <= 10; i++) {
             for (int j = 1; j <= 10; j++) {
                 System.out.print("*");
@@ -235,20 +237,19 @@ public class StarsApp {
         System.out.println();
     }
 
-/*
-Example Method for printing One to number of stars (in Ascending order).
-
-        int stars = 0;
-        System.out.println("\nPlease enter the number of Stars\n");
-        stars = starsCount(in);
-        System.out.println();
-        for (int i = 1; i <= 10; i++) {
-            for (int j = 1; j <= i; j++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
- */
+// -----------------------------------------------------------------------
+// Example Method for printing One to number of stars (in Ascending order).
+// -----------------------------------------------------------------------
+//         int stars = 0;
+//         System.out.println("\nPlease enter the number of Stars\n");
+//         stars = starsCount(in);
+//         System.out.println();
+//         for (int i = 1; i <= 10; i++) {
+//             for (int j = 1; j <= i; j++) {
+//                 System.out.print("*");
+//             }
+//             System.out.println();
+//         }
 
     /**
      * Prints out rows of stars in descending order in steps of one
@@ -265,20 +266,19 @@ Example Method for printing One to number of stars (in Ascending order).
             System.out.println();
         }
     }
-    /*
-    Example Method for printing number of stars to One (in Descending order).
-
-    int stars = 0;
-    System.out.println("\nPlease enter the number of Stars\n");
-    stars = starsCount(in);
-    System.out.println();
-    for (int i = 1; i <= 10; i++) {
-        for (int j = i; j <= 10; j++) {
-            System.out.print("*");
-        }
-        System.out.println();
-    }
-     */
+    // -----------------------------------------------------------------------
+    // Example Method for printing number of stars to One (in Descending order).
+    // -----------------------------------------------------------------------
+    //     int stars = 0;
+    //     System.out.println("\nPlease enter the number of Stars\n");
+    //     stars = starsCount(in);
+    //     System.out.println();
+    //     for (int i = 1; i <= 10; i++) {
+    //         for (int j = i; j <= 10; j++) {
+    //             System.out.print("*");
+    //         }
+    //         System.out.println();
+    //     }
 }
 
 
