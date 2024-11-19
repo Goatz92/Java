@@ -18,8 +18,6 @@ public class LeapYearTest {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
-        int startYear = 0;
-        int endYear = 0;
         int choice = 0;
         int years[];
         System.out.println("Leap Year finder!");    //Prints once at program Boot.
