@@ -10,6 +10,7 @@ import java.util.Scanner;
  * n * n stars in a table
  * 1 to n stars (Ascending)
  * n to 1 stars (Descending)
+ * @author Goatz
  */
 
 public class StarsApp {
@@ -26,7 +27,7 @@ public class StarsApp {
             choice = choice(in);
             switch (choice) { //For each case see printMenu Method. For Choice see choice method
                 case 1:
-                    stars = starsCount(stars);
+                    stars = starsCount();
                     starsLine(stars);
                     break;
                 case 2:
@@ -105,11 +106,11 @@ public class StarsApp {
      * by use of 'isNumberOfStarsValid' method
      * If number is lower or equal to zero
      * Asks the user for valid input
-     * @param stars     The number of stars the user inputs
      * @return          The total number of stars
      */
-    public static int starsCount(int stars) {
+    public static int starsCount() {
 
+        int stars = 0;
         do {
             System.out.println("\nPlease enter the number of stars\n");
             stars = in.nextInt();
@@ -126,11 +127,11 @@ public class StarsApp {
      * If number is lower or equal to zero
      * Asks the user for valid input
      * ONLY USE is in starsBox method.
-     * @param lines    The number of lines the user inputs
      * @return         The total number of lines
      */
-    public static int linesCount(int lines) {
+    public static int linesCount() {
 
+        int lines;
         do {
             System.out.println("\nPlease enter the number of Lines\n");
             lines = in.nextInt();
@@ -145,10 +146,10 @@ public class StarsApp {
      * @param stars     The number of stars input in starsCount method
      */
     public static void isNumberOfStarsValid (int stars) {
+
         if (stars <= 0) {
             System.out.println("Number of stars needs to be Greater than Zero!");
             System.out.println("Please try Again!");
-            return;
         }
     }
 
@@ -158,10 +159,10 @@ public class StarsApp {
      * @param lines     The number of lines input in linesCount method
      */
     public static void isNumberOfLinesValid (int lines) {
+
         if (lines <= 0) {
             System.out.println("Number of Lines needs to be Greater than Zero!");
             System.out.println("Please try Again!");
-            return;
         }
     }
 
@@ -184,7 +185,7 @@ public class StarsApp {
     public static void starsVertical () {
 
         int stars = 0;
-        stars = starsCount(stars);
+        stars = starsCount();
         for (int i = 1; i <= stars; i++) //Formula for printing stars in a vertical line.
             System.out.println("*");
     }
@@ -199,8 +200,8 @@ public class StarsApp {
 
         int stars = 0;
         int lines = 0;
-        stars = starsCount(stars);
-        lines = linesCount(lines);
+        stars = starsCount();
+        lines = linesCount();
         for (int i = 1; i <= lines; i++) { //Formula for determining how many lines the box shape will have
             starsLine(stars);{
             }
@@ -228,7 +229,7 @@ Example Method for printing Box (n*n (n = 10 in this example)
     public static void starsAscending () {
 
         int stars = 0;
-        stars = starsCount(stars);
+        stars = starsCount();
         System.out.println();
         for (int i = 1; i <= stars; i++) {
             starsLine(i);
@@ -259,7 +260,7 @@ Example Method for printing Box (n*n (n = 10 in this example)
     public static void starsDescending () {
 
         int stars = 0;
-        stars = starsCount(stars);
+        stars = starsCount();
         System.out.println();
         for (int i = stars; i >= 0; i--){
             starsLine(i);
