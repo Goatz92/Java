@@ -25,22 +25,22 @@ public class StarsApp {
         do {
             printMenu();
             choice = choice(in);
+            stars = starsCount();
             switch (choice) { //For each case see printMenu Method. For Choice see choice method
                 case 1:
-                    stars = starsCount();
                     starsLine(stars);
                     break;
                 case 2:
-                    starsVertical();
+                    starsVertical(stars);
                     break;
                 case 3:
-                    starsBox();
+                    starsBox(stars);
                     break;
                 case 4:
-                    starsAscending();
+                    starsAscending(stars);
                     break;
                 case 5:
-                    starsDescending();
+                    starsDescending(stars);
                     break;
                 case 6:
                     System.out.println("Goodbye!"); //Exit State
@@ -181,11 +181,10 @@ public class StarsApp {
     /**
      * Prints out a vertical line of stars
      * Equal to the number input in starsCount method
+     * @param stars     The number of stars input in starsCount method
      */
-    public static void starsVertical () {
+    public static void starsVertical (int stars) {
 
-        int stars = 0;
-        stars = starsCount();
         for (int i = 1; i <= stars; i++) //Formula for printing stars in a vertical line.
             System.out.println("*");
     }
@@ -195,16 +194,14 @@ public class StarsApp {
      * Box dimensions = stars*line
      * The number of stars/line = number of stars input in starsCount method
      * The number of lines = number of lines input in linesCount method
+     * @param stars     The number of stars input in starsCount method
      */
-    public static void starsBox () {
+    public static void starsBox (int stars) {
 
-        int stars = 0;
         int lines = 0;
-        stars = starsCount();
         lines = linesCount();
         for (int i = 1; i <= lines; i++) { //Formula for determining how many lines the box shape will have
-            starsLine(stars);{
-            }
+            starsLine(stars);
             System.out.println();
         }
     }
@@ -225,11 +222,10 @@ Example Method for printing Box (n*n (n = 10 in this example)
      * Prints rows of stars in ascending order in steps of one
      * Starts from one star.
      * Ends in number of stars input in starsCount method
+     * @param stars     The number of stars input in starsCount method
      */
-    public static void starsAscending () {
+    public static void starsAscending (int stars) {
 
-        int stars = 0;
-        stars = starsCount();
         System.out.println();
         for (int i = 1; i <= stars; i++) {
             starsLine(i);
@@ -256,11 +252,10 @@ Example Method for printing Box (n*n (n = 10 in this example)
      * Prints out rows of stars in descending order in steps of one
      * Starts from max number of stars input in starsCount method
      * Ends when it reaches one star.
+     * @param stars     The number of stars input in starsCount method
      */
-    public static void starsDescending () {
+    public static void starsDescending (int stars) {
 
-        int stars = 0;
-        stars = starsCount();
         System.out.println();
         for (int i = stars; i >= 0; i--){
             starsLine(i);
